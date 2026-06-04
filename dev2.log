@@ -1,0 +1,13 @@
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3001
+   - Network:      http://169.254.83.107:3001
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling / ...
+ ✓ Compiled / in 4.7s (1363 modules)
+ GET / 200 in 5262ms
+ ✓ Compiled /products/cloudstation-controller in 460ms (1364 modules)
+ GET /products/cloudstation-controller 200 in 755ms

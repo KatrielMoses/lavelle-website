@@ -1,0 +1,72 @@
+# Lavelle Networks Website — Cursor Rules
+
+## Rule #1: Read architect.md Before Anything
+
+Read `architect.md` completely before every task. It is the master specification for this project. Stack decisions, design system, color palette, page structure, SEO strategy, component conventions, and quality gates are all defined there.
+
+Also read `color_palette.md` before making any color decisions.
+
+## Project Summary
+
+Full redesign of lavellenetworks.com — India's largest enterprise SD-WAN company. Royal, luxury B2B aesthetic. Authoritative tone. No generic AI design aesthetics.
+
+## Stack
+
+- Next.js 15 with App Router and TypeScript
+- Tailwind CSS v4
+- Framer Motion for animations
+- Fonts: Cormorant Garamond (display) + DM Sans (body) via next/font
+- next/metadata for all SEO
+- next/image for all images
+- Deployment: Vercel
+
+## Code Conventions
+
+- TypeScript strict mode — no `any`
+- Named exports only, except page.tsx and layout.tsx
+- Tailwind utility classes only — no inline styles or styled-components
+- Framer Motion `variants` must be defined as constants outside the component
+- All copy and strings live in `lib/content.ts`, not hardcoded in JSX
+- Always use `next/image`, never raw `<img>` tags
+- Mobile-first: write base styles, then `md:`, then `lg:`
+
+## Directory Structure
+
+```
+src/
+  app/               # App Router pages
+  components/
+    ui/              # Primitives (Button, Card, Badge)
+    sections/        # Page sections (Hero, StatsBar, etc.)
+    layout/          # Header, Footer, MegaMenu
+  lib/               # content.ts, constants.ts, types.ts
+  styles/            # globals.css
+  content/           # MDX blog/resources
+  public/
+    images/
+    logos/           # SVG client logos
+    og/              # OpenGraph images
+```
+
+## Design Rules (from architect.md)
+
+- Colors: ONLY values from color_palette.md
+- Typography: Cormorant Garamond for headings, DM Sans for body — no other fonts
+- Sections alternate: white → off-white (#F7FAFD) → navy (#003F72)
+- Cards: rounded-xl, soft shadow, border border-[#C8D6E5]/40
+- Animations: fade-up on scroll, scale on hover — never bouncy or distracting
+- prefers-reduced-motion must be respected on all animations
+
+## What Not to Do
+
+- No `any` TypeScript
+- No inline styles
+- No hardcoded copy in JSX
+- No raw `<img>` tags
+- No AI-filler words in copy (robust, seamless, leverage, comprehensive, cutting-edge)
+- No purple gradients or generic stock photo heroes
+- No heavy UI libraries (no MUI, no Chakra, no mass shadcn imports)
+
+## Done Means
+
+Renders correctly at 375px, 768px, 1440px · tsc --noEmit passes · zero console errors · Lighthouse ≥ 90 Performance, ≥ 95 SEO, ≥ 90 Accessibility · copy sounds human.
