@@ -230,9 +230,8 @@ export const FOOTER_CONTENT = {
       heading: "Solutions",
       links: [
         { label: "SD-WAN Platform", href: "/solutions/sd-wan" },
+        { label: "Features", href: "/solutions/features" },
         { label: "ScaleAOn Architecture", href: "/solutions/scaleaon" },
-        { label: "SD-NET Branch", href: "/solutions/sd-net" },
-        { label: "Hybrid WAN", href: "/solutions/hybrid-wan" },
       ],
     },
     {

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
-  Activity,
   ArrowRight,
   BadgeCheck,
   BarChart3,
@@ -13,7 +11,6 @@ import {
   Gauge,
   GitBranch,
   Globe2,
-  Layers3,
   LineChart,
   LockKeyhole,
   Network,
@@ -24,6 +21,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { PRODUCTS_CONTENT } from "@/lib/products-content";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { CloudStationControllerPreview } from "@/components/sections/CloudStationControllerPreview";
 
 const product = PRODUCTS_CONTENT["cloudstation-controller"];
 const controller = product.controllerExperience;
@@ -128,83 +126,7 @@ export default function CloudStationControllerPage() {
             </div>
           </div>
 
-          <div className="hidden max-h-[calc(100svh-8rem)] rounded-xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-[#1A1A1A]/30 backdrop-blur lg:-mr-8 lg:block lg:scale-[0.86] lg:overflow-hidden lg:origin-center xl:-mr-16 xl:scale-[0.94] 2xl:scale-100">
-            <div className="rounded-lg bg-[#F7FAFD] p-4 text-[#1A1A1A] sm:p-5">
-              <div className="flex flex-col gap-4 border-b border-[#C8D6E5]/70 pb-4 sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="relative h-10 w-36">
-                    <Image
-                      src="/lavelle-logo.png"
-                      alt="Lavelle Networks logo"
-                      fill
-                      sizes="144px"
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                </div>
-                <div className="rounded-full bg-[#E6F3FB] px-4 py-2 text-sm font-semibold text-[#003F72]">
-                  {content.dashboardLabel}
-                </div>
-              </div>
-
-              <div className="grid gap-3 py-4 sm:grid-cols-3">
-                {content.dashboardStats.map((stat) => (
-                  <div
-                    key={stat.name}
-                    className="rounded-lg border border-[#C8D6E5]/60 bg-white p-4 shadow-sm xl:p-5"
-                  >
-                    <p className="font-display text-2xl text-[#003F72] xl:text-3xl">{stat.name}</p>
-                    <p className="mt-2 text-sm leading-6 text-[#4A4A4A] xl:max-w-52">
-                      {stat.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="grid gap-3 lg:grid-cols-[1.12fr_0.88fr]">
-                <div className="rounded-lg border border-[#C8D6E5]/60 bg-white p-4 xl:p-5">
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-sm font-semibold uppercase text-[#005A9E]">
-                        {content.dashboardTitle}
-                      </p>
-                      <p className="mt-3 text-sm leading-6 text-[#4A4A4A] xl:max-w-2xl">
-                        {content.dashboardDescription}
-                      </p>
-                    </div>
-                    <Layers3 className="hidden h-12 w-12 text-[#0078D4] sm:block" aria-hidden="true" />
-                  </div>
-                  <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-                    {product.models.map((model, index) => (
-                      <div key={model.name} className="flex items-center gap-3">
-                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E6F3FB] text-sm font-semibold text-[#003F72]">
-                          {index + 1}
-                        </span>
-                        <div className="h-2 flex-1 rounded-full bg-[#EEF4FA]">
-                          <div
-                            className={[
-                              "h-2 rounded-full bg-[#0078D4]",
-                              index === 0 ? "w-1/3" : "",
-                              index === 1 ? "w-2/3" : "",
-                              index === 2 ? "w-full" : "",
-                            ].join(" ")}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="rounded-lg bg-[#003F72] p-5 text-white xl:p-6">
-                  <Activity className="h-8 w-8 text-[#1A9AE6]" aria-hidden="true" />
-                  <p className="mt-4 text-sm leading-7 text-[#E6F3FB] xl:text-base">
-                    {content.overviewKicker}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <CloudStationControllerPreview preview={content.preview} />
         </div>
       </section>
 

@@ -21,9 +21,8 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/solutions",
     children: [
       { label: "SD-WAN Platform", href: "/solutions/sd-wan" },
+      { label: "Features", href: "/solutions/features" },
       { label: "ScaleAOn Architecture", href: "/solutions/scaleaon" },
-      { label: "SD-NET Branch", href: "/solutions/sd-net" },
-      { label: "Hybrid WAN", href: "/solutions/hybrid-wan" },
     ],
   },
   {

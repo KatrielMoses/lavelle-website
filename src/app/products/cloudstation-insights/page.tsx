@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -17,12 +16,10 @@ import {
   Network,
   RadioTower,
   Route,
-  Search,
-  ShieldCheck,
-  Signal,
   TrendingUp,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { CloudStationInsightsAnalyticsMock } from "@/components/sections/CloudStationInsightsAnalyticsMock";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import { PRODUCTS_CONTENT } from "@/lib/products-content";
 
@@ -32,7 +29,6 @@ const insights = product.insightsExperience;
 const featureIcons: LucideIcon[] = [Route, Gauge, BarChart3, HardDrive, Brain];
 const suiteIcons: LucideIcon[] = [RadioTower, Cloud, Network, LineChart];
 const resourceIcons: LucideIcon[] = [Building2, Database, Globe2];
-const signalBars = ["h-10", "h-16", "h-12", "h-24", "h-20", "h-28", "h-14"];
 
 export const metadata: Metadata = {
   title: "CloudStation Insights | SD-WAN Analytics India",
@@ -123,89 +119,11 @@ export default function CloudStationInsightsPage() {
             </div>
           </div>
 
-          <div className="hidden rounded-xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-[#1A1A1A]/30 backdrop-blur lg:-mr-8 lg:block lg:origin-center lg:scale-[0.8] xl:-mr-16 xl:scale-[0.88] 2xl:scale-[0.96]">
-            <div className="rounded-lg bg-[#F7FAFD] p-4 text-[#1A1A1A]">
-              <div className="flex flex-col gap-4 border-b border-[#C8D6E5]/70 pb-3 sm:flex-row sm:items-center sm:justify-between">
-                <div className="relative h-10 w-36">
-                  <Image
-                    src="/lavelle-logo.png"
-                    alt="Lavelle Networks logo"
-                    fill
-                    sizes="144px"
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-                <div className="rounded-full bg-[#E6F3FB] px-4 py-2 text-sm font-semibold text-[#003F72]">
-                  {content.dashboardLabel}
-                </div>
-              </div>
-
-              <div className="grid gap-3 py-3 sm:grid-cols-3">
-                {content.dashboardStats.map((stat) => (
-                  <div
-                    key={stat.name}
-                    className="rounded-lg border border-[#C8D6E5]/60 bg-white p-4 shadow-sm"
-                  >
-                    <p className="font-display text-2xl text-[#003F72]">{stat.name}</p>
-                    <p className="mt-2 text-sm leading-6 text-[#4A4A4A]">
-                      {stat.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="grid gap-3 xl:grid-cols-[1fr_0.92fr]">
-                <div className="rounded-lg border border-[#C8D6E5]/60 bg-white p-4">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-sm font-semibold uppercase text-[#005A9E]">
-                        {content.dashboardTitle}
-                      </p>
-                      <p className="mt-3 text-sm leading-6 text-[#4A4A4A] xl:max-w-2xl">
-                        {content.dashboardDescription}
-                      </p>
-                    </div>
-                    <Search className="hidden h-12 w-12 text-[#0078D4] sm:block" aria-hidden="true" />
-                  </div>
-
-                  <div className="mt-4 grid grid-cols-7 items-end gap-2 rounded-lg bg-[#EEF4FA] px-4 pb-4 pt-5">
-                    {signalBars.map((height, index) => (
-                      <div key={`${height}-${index}`} className="flex flex-col items-center gap-2">
-                        <div className={`w-full rounded-t-md bg-[#0078D4] ${height}`} />
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#003F72]" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
-                  {product.models.map((model, index) => (
-                    <div
-                      key={model.name}
-                    className="rounded-lg bg-[#003F72] p-4 text-white"
-                  >
-                      <div className="flex items-center gap-3">
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E6F3FB] text-sm font-semibold text-[#003F72]">
-                          {index + 1}
-                        </span>
-                        <p className="font-display text-base text-white">{model.name}</p>
-                      </div>
-                      <p className="mt-3 text-sm leading-6 text-[#E6F3FB]">{model.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-3 rounded-lg border border-[#C8D6E5]/60 bg-white p-3">
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="max-w-3xl text-sm leading-6 text-[#4A4A4A]">
-                    {content.overviewKicker}
-                  </p>
-                  <Signal className="h-9 w-9 flex-none text-[#0078D4]" aria-hidden="true" />
-                </div>
-              </div>
-            </div>
+          <div className="hidden lg:-mr-10 lg:mt-24 lg:block lg:origin-center lg:scale-[0.8] xl:-mr-16 xl:scale-[0.88] 2xl:scale-[0.95]">
+            <CloudStationInsightsAnalyticsMock
+              fabricLabel={content.dashboardLabel}
+              preview={content.preview}
+            />
           </div>
         </div>
       </section>

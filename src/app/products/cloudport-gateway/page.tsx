@@ -25,6 +25,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import { PRODUCTS_CONTENT } from "@/lib/products-content";
+import { CloudPortGatewayIllustration } from "@/components/ui/cloudport-gateway-illustration";
 
 const product = PRODUCTS_CONTENT["cloudport-gateway"];
 const gateway = product.gatewayExperience;
@@ -125,7 +126,7 @@ export default function CloudPortGatewayPage() {
 
           <div className="hidden rounded-xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-[#1A1A1A]/30 backdrop-blur lg:-mr-8 lg:block lg:origin-center lg:scale-[0.86] xl:-mr-16 xl:scale-[0.94] 2xl:scale-100">
             <div className="rounded-lg bg-[#F7FAFD] p-4 text-[#1A1A1A] sm:p-5">
-              <div className="flex flex-col gap-4 border-b border-[#C8D6E5]/70 pb-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col gap-4 rounded-t-lg bg-[#003F72] p-4 sm:p-5 sm:flex-row sm:items-center sm:justify-between -mx-4 -mt-4 mb-4 sm:-mx-5 sm:-mt-5 border-b border-[#1A1A1A]/10">
                 <div className="relative h-10 w-36">
                   <Image
                     src="/lavelle-logo.png"
@@ -136,7 +137,7 @@ export default function CloudPortGatewayPage() {
                     priority
                   />
                 </div>
-                <div className="rounded-full bg-[#E6F3FB] px-4 py-2 text-sm font-semibold text-[#003F72]">
+                <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm">
                   {content.gatewayLabel}
                 </div>
               </div>
@@ -156,21 +157,7 @@ export default function CloudPortGatewayPage() {
                   </div>
 
                   <div className="mt-6 rounded-lg bg-[#003F72] p-5 text-white">
-                    <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4">
-                      <div className="space-y-3">
-                        <span className="block h-3 rounded-full bg-[#1A9AE6]" />
-                        <span className="block h-3 w-4/5 rounded-full bg-white/40" />
-                        <span className="block h-3 w-3/5 rounded-full bg-[#1A9AE6]" />
-                      </div>
-                      <div className="flex h-24 w-24 items-center justify-center rounded-xl border border-white/20 bg-[#1A1A1A]">
-                        <Cloud className="h-10 w-10 text-[#E6F3FB]" aria-hidden="true" />
-                      </div>
-                      <div className="space-y-3">
-                        <span className="ml-auto block h-3 w-3/5 rounded-full bg-[#1A9AE6]" />
-                        <span className="ml-auto block h-3 w-4/5 rounded-full bg-white/40" />
-                        <span className="ml-auto block h-3 rounded-full bg-[#1A9AE6]" />
-                      </div>
-                    </div>
+                    <CloudPortGatewayIllustration />
                   </div>
                 </div>
 

@@ -28,6 +28,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import { PRODUCTS_CONTENT } from "@/lib/products-content";
+import { CloudportDeviceIllustration } from "@/components/ui/cloudport-device-illustration";
 
 const product = PRODUCTS_CONTENT["cloudport-edge"];
 const edge = product.edgeExperience;
@@ -161,16 +162,7 @@ export default function CloudPortEdgePage() {
                   </div>
 
                   <div className="mt-6 rounded-lg bg-[#003F72] p-4 text-white">
-                    <div className="relative mx-auto h-28 max-w-md rounded-xl border border-white/15 bg-[#1A1A1A] shadow-xl shadow-[#003F72]/20">
-                      <div className="absolute left-5 top-5 h-3 w-28 rounded-full bg-[#0078D4]" />
-                      <div className="absolute right-5 top-5 h-7 w-28 rounded bg-white/90" />
-                      <div className="absolute bottom-5 left-5 flex gap-2">
-                        <span className="h-2 w-8 rounded-full bg-[#1A9AE6]" />
-                        <span className="h-2 w-8 rounded-full bg-white/30" />
-                        <span className="h-2 w-8 rounded-full bg-[#1A9AE6]" />
-                      </div>
-                      <div className="absolute bottom-5 right-5 h-8 w-28 rounded-full bg-[#E6F3FB]" />
-                    </div>
+                    <CloudportDeviceIllustration />
                   </div>
                 </div>
 

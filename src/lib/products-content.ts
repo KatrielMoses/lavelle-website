@@ -31,6 +31,55 @@ export interface ProductResource {
   href: string;
 }
 
+export interface CloudStationPreviewContent {
+  label: string;
+  logo: string;
+  customerName: string;
+  mapAlt: string;
+  navItems: string[];
+  stats: ProductModel[];
+  tooltip: string;
+  modalTitle: string;
+  deploymentOptions: string[];
+  actionLabel: string;
+}
+
+export interface CloudStationInsightsFlowRow {
+  application: string;
+  throughput: string;
+  barClass: string;
+}
+
+export interface CloudStationInsightsMetric {
+  label: string;
+  value: string;
+  spikeValue?: string;
+}
+
+export interface CloudStationInsightsPathHop {
+  label: string;
+  latency?: string;
+}
+
+export interface CloudStationInsightsPreviewContent {
+  title: string;
+  subtitle: string;
+  scoreBadge: string;
+  tabs: string[];
+  flowTitle: string;
+  flows: CloudStationInsightsFlowRow[];
+  newFlow: CloudStationInsightsFlowRow;
+  statPills: string[];
+  linkTitle: string;
+  gaugeValue: string;
+  gaugeTotal: string;
+  metrics: CloudStationInsightsMetric[];
+  updatedLabel: string;
+  pathTitle: string;
+  pathTraceLabel: string;
+  pathHops: CloudStationInsightsPathHop[];
+}
+
 export interface CloudStationControllerExperience {
   eyebrow: string;
   heroCommand: string;
@@ -60,6 +109,7 @@ export interface CloudStationControllerExperience {
   finalCtaDescription: string;
   salesCtaLabel: string;
   secondaryCtaLabel: string;
+  preview: CloudStationPreviewContent;
 }
 
 export interface CloudStationInsightsExperience {
@@ -69,6 +119,7 @@ export interface CloudStationInsightsExperience {
   dashboardTitle: string;
   dashboardDescription: string;
   dashboardStats: ProductModel[];
+  preview: CloudStationInsightsPreviewContent;
   overviewKicker: string;
   modelsTitle: string;
   modelsDescription: string;
@@ -393,6 +444,27 @@ export const PRODUCTS_CONTENT: Record<string, ProductPageContent> = {
         "Give your network team a controller that can match boardroom ambition, branch reality, and cloud migration pressure.",
       salesCtaLabel: "Contact Sales Now",
       secondaryCtaLabel: "Explore ScaleAOn",
+      preview: {
+        label: "ScaleAOn control fabric",
+        logo: "CloudStation",
+        customerName: "Lavelle Enterprise Network",
+        mapAlt: "Dark CloudStation map of India with active branch and cloud edge locations",
+        navItems: ["Overlay", "Monitor", "Manage", "Settings"],
+        stats: [
+          {
+            name: "Nodes Online",
+            description: "847",
+          },
+          {
+            name: "Tunnels Active",
+            description: "1,204",
+          },
+        ],
+        tooltip: "+ Add Location",
+        modalTitle: "Deploy Cloud Edge",
+        deploymentOptions: ["AWS", "Azure", "SFL"],
+        actionLabel: "Orchestrate",
+      },
     },
   },
   "cloudstation-insights": {
@@ -479,6 +551,88 @@ export const PRODUCTS_CONTENT: Record<string, ProductPageContent> = {
           description: "Split-second visibility into top users, applications, endpoints, and usage.",
         },
       ],
+      preview: {
+        title: "CloudStation Insights",
+        subtitle: "Flow telemetry and path intelligence",
+        scoreBadge: "Score: 87",
+        tabs: ["Flows", "Scores", "Path Visibility"],
+        flowTitle: "Top Applications",
+        flows: [
+          {
+            application: "Microsoft Teams",
+            throughput: "2.4 Gbps",
+            barClass: "w-4/5",
+          },
+          {
+            application: "SAP ERP",
+            throughput: "1.8 Gbps",
+            barClass: "w-3/5",
+          },
+          {
+            application: "HTTPS",
+            throughput: "1.1 Gbps",
+            barClass: "w-2/5",
+          },
+          {
+            application: "RDP",
+            throughput: "0.6 Gbps",
+            barClass: "w-1/5",
+          },
+          {
+            application: "DNS",
+            throughput: "0.1 Gbps",
+            barClass: "w-[5%]",
+          },
+        ],
+        newFlow: {
+          application: "Video Conf",
+          throughput: "3.1 Gbps",
+          barClass: "w-[92%]",
+        },
+        statPills: ["Top User: 10.0.1.42 - 840 Mbps", "Flows: 12,847 active"],
+        linkTitle: "Link Health",
+        gaugeValue: "87",
+        gaugeTotal: "100",
+        metrics: [
+          {
+            label: "Latency",
+            value: "12ms",
+            spikeValue: "28ms",
+          },
+          {
+            label: "Jitter",
+            value: "2ms",
+          },
+          {
+            label: "Packet Loss",
+            value: "0.01%",
+          },
+        ],
+        updatedLabel: "Updated 5s ago",
+        pathTitle: "Path Visibility",
+        pathTraceLabel: "Live packet trace",
+        pathHops: [
+          {
+            label: "Branch: Mumbai",
+          },
+          {
+            label: "ACE: ap-south-1",
+            latency: "4ms",
+          },
+          {
+            label: "FCE: global",
+            latency: "18ms",
+          },
+          {
+            label: "ACE: us-east-1",
+            latency: "110ms",
+          },
+          {
+            label: "Branch: New York",
+            latency: "14ms",
+          },
+        ],
+      },
       overviewKicker:
         "Built as a physical, virtual, or cloud analytics appliance, CloudStation Insights powers dynamic path selection, automated performance characterization, and executive-grade network visibility.",
       modelsTitle: "Insights Models",
