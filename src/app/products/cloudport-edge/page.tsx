@@ -131,7 +131,7 @@ export default function CloudPortEdgePage() {
 
           <div className="hidden max-h-[calc(100svh-8rem)] rounded-xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-[#1A1A1A]/30 backdrop-blur xl:-mr-8 xl:block xl:scale-[0.90] xl:overflow-hidden xl:origin-center 2xl:-mr-0 2xl:scale-100">
             <div className="rounded-lg bg-[#F7FAFD] p-4 text-[#1A1A1A] sm:p-5">
-              <div className="flex flex-col gap-4 border-b border-[#C8D6E5]/70 pb-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col gap-4 rounded-t-lg bg-[#003F72] p-4 sm:p-5 sm:flex-row sm:items-center sm:justify-between -mx-4 -mt-4 mb-4 sm:-mx-5 sm:-mt-5 border-b border-[#1A1A1A]/10">
                 <div className="relative h-10 w-36">
                   <Image
                     src="/lavelle-logo.png"
@@ -142,7 +142,7 @@ export default function CloudPortEdgePage() {
                     priority
                   />
                 </div>
-                <div className="rounded-full bg-[#E6F3FB] px-4 py-2 text-sm font-semibold text-[#003F72]">
+                <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-sm">
                   {content.applianceLabel}
                 </div>
               </div>
@@ -161,7 +161,7 @@ export default function CloudPortEdgePage() {
                     <Router className="hidden h-12 w-12 text-[#0078D4] sm:block" aria-hidden="true" />
                   </div>
 
-                  <div className="mt-6 rounded-lg bg-[#003F72] p-4 text-white">
+                  <div className="mt-6 relative">
                     <CloudportDeviceIllustration />
                   </div>
                 </div>
