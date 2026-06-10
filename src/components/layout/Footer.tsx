@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="bg-[#1A1A1A] text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-10">
         {/* Top row */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 pb-16 border-b border-white/10">
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6" aria-label={SITE_NAME}>
@@ -78,11 +78,11 @@ export function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8">
-          <p className="text-xs text-white/35 font-sans">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+          <p className="text-xs text-white/35 font-sans text-center sm:text-left">
             © {year} {SITE_NAME} Pvt. Ltd. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {["Privacy Policy", "Terms of Use", "E-Waste Management"].map((label) => (
               <Link
                 key={label}

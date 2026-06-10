@@ -14,7 +14,7 @@ export function Hero() {
   const shouldReduce = useReducedMotion();
 
   return (
-    <section className="relative h-screen flex flex-col overflow-hidden bg-[#003F72]">
+    <section className="relative min-h-[100svh] flex flex-col overflow-hidden bg-[#003F72]">
       {/* Background gradient mesh */}
       <div
         aria-hidden
@@ -37,7 +37,7 @@ export function Hero() {
       />
 
       {/* Main content — flex-1 so it fills space above stats */}
-      <div className="relative z-10 flex-1 flex items-center px-6 lg:px-8 pt-24">
+      <div className="relative z-10 flex-1 flex items-center px-4 sm:px-6 lg:px-8 pt-28 pb-12 lg:pt-32 lg:pb-16">
         <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 
           {/* Left: text */}
@@ -57,7 +57,7 @@ export function Hero() {
             {/* Headline */}
             <motion.h1
               variants={shouldReduce ? undefined : fadeUp}
-              className="font-display text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.05] mb-6 whitespace-pre-line"
+              className="font-display text-[clamp(2.5rem,6vw,3.5rem)] lg:text-[clamp(3.5rem,5vw,4.5rem)] text-white leading-[1.05] mb-6 whitespace-pre-line"
             >
               {HERO_CONTENT.headline}
             </motion.h1>
@@ -112,18 +112,18 @@ export function Hero() {
             variants={shouldReduce ? undefined : stagger(0.08)}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-2 lg:grid-cols-4"
+            className="grid grid-cols-2 md:grid-cols-4"
           >
             {STATS.map((stat, i) => (
               <motion.div
                 key={i}
                 variants={shouldReduce ? undefined : fadeUp}
-                className="py-7 px-6 border-r border-white/10 last:border-r-0 [&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r"
+                className="py-5 md:py-7 px-4 md:px-6 border-r border-white/10 last:border-r-0 [&:nth-child(2)]:border-r-0 md:[&:nth-child(2)]:border-r"
               >
-                <div className="font-display text-4xl text-white leading-none mb-2">
+                <div className="font-display text-2xl md:text-3xl lg:text-4xl text-white leading-none mb-2">
                   {stat.value}
                   {stat.suffix && (
-                    <span className="text-[#1A9AE6] text-3xl">{stat.suffix}</span>
+                    <span className="text-[#1A9AE6] text-2xl md:text-3xl">{stat.suffix}</span>
                   )}
                 </div>
                 <p className="text-xs text-white/50 font-sans leading-snug">{stat.label}</p>

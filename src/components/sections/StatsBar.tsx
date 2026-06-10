@@ -27,10 +27,10 @@ export function StatsBar() {
               variants={shouldReduce ? undefined : fadeUpSm}
               className="text-center lg:text-left lg:border-l lg:border-white/15 lg:pl-8 first:lg:border-l-0 first:lg:pl-0"
             >
-              <div className="font-display text-5xl lg:text-6xl text-white leading-none mb-3">
+              <div className="font-display text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl text-white leading-none mb-3">
                 {stat.value}
                 {stat.suffix && (
-                  <span className="text-[#1A9AE6] text-4xl lg:text-5xl">{stat.suffix}</span>
+                  <span className="text-[#1A9AE6] text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl">{stat.suffix}</span>
                 )}
               </div>
               <p className="text-sm text-white/55 font-sans leading-snug max-w-44 mx-auto lg:mx-0">

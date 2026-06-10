@@ -15,11 +15,11 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#0F0F0F] border-b border-white/10">
-      <div className="w-full px-6 lg:px-10">
-        <div className="flex items-center justify-between py-5">
+      <div className="w-full px-4 sm:px-6 lg:px-10">
+        <div className="flex items-center justify-between py-3 md:py-4 lg:py-5">
 
           {/* Left group: logo + nav */}
-          <div className="flex items-center gap-10">
+          <div className="flex items-center gap-4 xl:gap-10">
 
             {/* Logo */}
             <Link href="/" className="shrink-0" aria-label={SITE_NAME}>
@@ -28,7 +28,7 @@ export function Header() {
                 alt={SITE_NAME}
                 width={200}
                 height={64}
-                className="h-16 w-auto object-contain"
+                className="h-10 md:h-12 lg:h-14 w-auto object-contain"
                 priority
               />
             </Link>
@@ -44,7 +44,7 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 px-4 py-2 text-xs text-white/80 hover:text-white font-sans font-semibold tracking-widest uppercase rounded-lg hover:bg-white/8 transition-colors duration-150"
+                  className="flex items-center gap-1 px-2.5 xl:px-4 py-2 text-[10px] xl:text-xs text-white/80 hover:text-white font-sans font-semibold tracking-widest uppercase rounded-lg hover:bg-white/8 transition-colors duration-150"
                 >
                   {item.label}
                   {item.children && (
@@ -102,7 +102,7 @@ export function Header() {
           {/* Right: CTA */}
           <div className="hidden lg:flex items-center">
             <Link href="/contact">
-              <Button variant="primary" size="md" className="tracking-widest uppercase">
+              <Button variant="primary" size="sm" className="tracking-widest uppercase whitespace-nowrap xl:px-6 xl:py-3 xl:text-base">
                 Know More!
               </Button>
             </Link>
@@ -129,7 +129,7 @@ export function Header() {
             transition={{ duration: 0.25 }}
             className="lg:hidden overflow-hidden bg-[#003F72] border-t border-white/10"
           >
-            <nav className="px-6 py-6 space-y-1">
+            <nav className="px-6 py-6 space-y-1 max-h-[calc(100svh-4rem)] overflow-y-auto">
               {NAV_ITEMS.map((item) => (
                 <div key={item.href}>
                   <Link

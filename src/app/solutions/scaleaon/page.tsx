@@ -54,7 +54,7 @@ export default function ScaleAOnPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#1A1A1A] px-4 py-24 text-white sm:px-6 sm:py-28 lg:min-h-0 lg:h-[90svh] lg:px-8 lg:py-0">
+      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#1A1A1A] px-4 py-28 text-white sm:px-6 sm:py-32 xl:min-h-[90svh] xl:px-8 xl:py-16">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,#003F72_0%,transparent_80%),linear-gradient(135deg,#1A1A1A_0%,#0f0f0f_100%)]" />
         
         {/* Abstract network mesh effect */}
@@ -69,7 +69,7 @@ export default function ScaleAOnPage() {
               <span className="tracking-wide uppercase">{content.hero.eyebrow}</span>
             </div>
           )}
-          <h1 className="max-w-5xl font-display text-4xl leading-tight text-white sm:text-5xl lg:text-[clamp(3.5rem,6vw,6rem)]">
+          <h1 className="max-w-5xl font-display text-[clamp(2.5rem,6vw,3.5rem)] leading-tight text-white lg:text-[clamp(3.5rem,5vw,4.5rem)]">
             {content.hero.title}
           </h1>
           {content.hero.command && (

@@ -93,26 +93,26 @@ export default function CloudPortEdgePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
 
-      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#003F72] px-4 py-24 text-white sm:px-6 sm:py-28 lg:h-[100svh] lg:min-h-0 lg:px-8 lg:py-0">
+      <section className="relative isolate overflow-hidden bg-[#003F72] px-4 py-28 text-white sm:px-6 sm:py-32 xl:flex xl:min-h-[100svh] xl:items-center xl:px-8 xl:py-0">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,#0078D4_0%,transparent_34%),linear-gradient(135deg,#003F72_0%,#1A1A1A_100%)]" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-[#1A1A1A]/35 to-transparent" />
 
-        <div className="mx-auto grid w-full max-w-[1480px] items-center gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(0,1.32fr)] xl:gap-12">
-          <div className="max-w-[620px] lg:-ml-6 xl:-ml-12">
-            <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-[#E6F3FB] lg:mb-6">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-8 xl:grid-cols-[minmax(0,0.65fr)_minmax(0,1.35fr)] xl:gap-10">
+          <div className="mx-auto max-w-2xl xl:mx-0 xl:max-w-[560px] xl:-ml-2 2xl:-ml-6">
+            <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-[#E6F3FB] xl:mb-6">
               <BadgeCheck className="h-4 w-4 text-[#1A9AE6]" aria-hidden="true" />
               {content.eyebrow}
             </div>
-            <h1 className="max-w-3xl font-display text-4xl leading-tight text-white sm:text-5xl lg:text-[clamp(2.75rem,4vw,4.25rem)]">
+            <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl xl:text-[clamp(2.75rem,4vw,4.25rem)]">
               {product.hero.title}
             </h1>
-            <p className="mt-5 max-w-2xl text-xl leading-8 text-[#E6F3FB] sm:text-2xl lg:mt-6">
+            <p className="mt-5 max-w-xl text-lg leading-8 text-[#E6F3FB] sm:text-xl xl:mt-6">
               {content.heroCommand}
             </p>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-white/80 sm:text-lg lg:mt-5">
+            <p className="mt-4 max-w-xl text-base leading-7 text-white/80 xl:mt-5">
               {product.hero.description}
             </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row lg:mt-10">
+            <div className="mt-8 flex flex-wrap gap-4 xl:mt-10">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0078D4] px-7 py-4 text-base font-semibold text-white transition hover:bg-[#005A9E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E6F3FB]"
@@ -129,7 +129,7 @@ export default function CloudPortEdgePage() {
             </div>
           </div>
 
-          <div className="hidden max-h-[calc(100svh-8rem)] rounded-xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-[#1A1A1A]/30 backdrop-blur lg:-mr-8 lg:block lg:scale-[0.86] lg:overflow-hidden lg:origin-center xl:-mr-16 xl:scale-[0.94] 2xl:scale-100">
+          <div className="hidden max-h-[calc(100svh-8rem)] rounded-xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-[#1A1A1A]/30 backdrop-blur xl:-mr-8 xl:block xl:scale-[0.90] xl:overflow-hidden xl:origin-center 2xl:-mr-0 2xl:scale-100">
             <div className="rounded-lg bg-[#F7FAFD] p-4 text-[#1A1A1A] sm:p-5">
               <div className="flex flex-col gap-4 border-b border-[#C8D6E5]/70 pb-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="relative h-10 w-36">

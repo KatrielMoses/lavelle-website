@@ -36,7 +36,7 @@ export function IndustriesGrid() {
             <p className="text-xs font-sans font-semibold uppercase tracking-widest text-[#0078D4] mb-3">
               Industries
             </p>
-            <h2 className="font-display text-5xl lg:text-6xl text-[#1A1A1A]">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl text-[#1A1A1A]">
               Deep expertise,<br className="hidden lg:block" /> every sector.
             </h2>
           </div>

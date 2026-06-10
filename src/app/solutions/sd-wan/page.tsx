@@ -55,7 +55,7 @@ export default function SDWANPlatformPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#003F72] px-4 py-24 text-white sm:px-6 sm:py-28 lg:min-h-0 lg:h-[90svh] lg:px-8 lg:py-0">
+      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#003F72] px-4 py-28 text-white sm:px-6 sm:py-32 xl:min-h-[90svh] xl:px-8 xl:py-16">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_30%,#0078D4_0%,transparent_50%),linear-gradient(135deg,#003F72_0%,#1A1A1A_100%)]" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-[#1A1A1A]/35 to-transparent" />
 
@@ -66,7 +66,7 @@ export default function SDWANPlatformPage() {
               {content.hero.eyebrow}
             </div>
           )}
-          <h1 className="max-w-4xl font-display text-4xl leading-tight text-white sm:text-5xl lg:text-[clamp(3rem,5vw,5rem)]">
+          <h1 className="max-w-4xl font-display text-[clamp(2.5rem,6vw,3.5rem)] leading-tight text-white lg:text-[clamp(3.5rem,5vw,4.5rem)]">
             {content.hero.title}
           </h1>
           {content.hero.command && (

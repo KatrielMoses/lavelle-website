@@ -31,7 +31,7 @@ export function CtaBanner() {
           </motion.p>
           <motion.h2
             variants={shouldReduce ? undefined : fadeUpFast}
-            className="font-display text-5xl lg:text-6xl text-white mb-6"
+            className="font-display text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl text-white mb-6"
           >
             Ready to modernise your network?
           </motion.h2>

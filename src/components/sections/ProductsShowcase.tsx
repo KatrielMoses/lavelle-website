@@ -37,7 +37,7 @@ export function ProductsShowcase() {
           <p className="text-xs font-sans font-semibold uppercase tracking-widest text-[#0078D4] mb-3">
             Products
           </p>
-          <h2 className="font-display text-5xl lg:text-6xl text-[#1A1A1A] mb-5">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl text-[#1A1A1A] mb-5">
             Built for enterprise scale.
           </h2>
           <p className="text-[#4A4A4A] font-sans text-lg leading-relaxed">
@@ -62,7 +62,7 @@ export function ProductsShowcase() {
                     {/* Accent top bar */}
                     <div className="h-[3px] w-full" style={{ background: `linear-gradient(to right, ${accent}, transparent)` }} />
 
-                    <div className="p-8 lg:p-10">
+                    <div className="p-6 lg:p-8 2xl:p-10">
                       {/* Header row */}
                       <div className="flex items-start justify-between mb-6">
                         <div className="flex items-center gap-4">

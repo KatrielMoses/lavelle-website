@@ -18,7 +18,7 @@ export function Testimonials() {
   return (
     <section ref={ref} className="relative bg-[#003F72] py-24 lg:py-32 overflow-hidden">
       {/* Background number watermark */}
-      <div aria-hidden className="absolute right-0 top-1/2 -translate-y-1/2 text-[320px] font-display font-semibold text-white/[0.025] leading-none select-none pointer-events-none pr-8">
+      <div aria-hidden className="absolute right-0 top-1/2 -translate-y-1/2 text-[120px] sm:text-[200px] lg:text-[280px] 2xl:text-[320px] font-display font-semibold text-white/[0.025] leading-none select-none pointer-events-none pr-4 lg:pr-8">
         &ldquo;
       </div>
 
@@ -28,7 +28,7 @@ export function Testimonials() {
           <p className="text-xs font-sans font-semibold uppercase tracking-widest text-[#1A9AE6] mb-3">
             Client results
           </p>
-          <h2 className="font-display text-5xl lg:text-6xl text-white mb-4">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl text-white mb-4">
             Results that speak.
           </h2>
           <p className="text-white/50 font-sans text-base leading-relaxed">
@@ -71,7 +71,7 @@ export function Testimonials() {
               </div>
 
               {/* Quote */}
-              <blockquote className="font-display text-xl lg:text-2xl text-white/90 leading-snug mb-8 flex-1">
+              <blockquote className="font-display text-lg sm:text-xl lg:text-2xl text-white/90 leading-snug mb-8 flex-1">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
 
@@ -95,7 +95,7 @@ export function Testimonials() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           transition={{ delay: 0.5 }}
-          className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden"
+          className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden"
         >
           {[
             { v: "200+", l: "Enterprise deployments" },

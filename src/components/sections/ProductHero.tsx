@@ -27,7 +27,7 @@ export function ProductHero({ title, description }: ProductHeroProps) {
   const childVariants = shouldReduceMotion ? {} : itemVariants;
 
   return (
-    <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden bg-[#003F72] px-4 py-24 sm:px-6 lg:px-8">
+    <section className="relative flex min-h-[60svh] items-center justify-center overflow-hidden bg-[#003F72] px-4 py-28 sm:px-6 sm:py-32 lg:px-8">
       {/* Background Glow */}
       <div className="absolute inset-0 z-0">
         <div className="absolute -left-1/4 top-0 h-[500px] w-[500px] rounded-full bg-[#0078D4] opacity-20 blur-[120px]" />
@@ -42,14 +42,14 @@ export function ProductHero({ title, description }: ProductHeroProps) {
       >
         <motion.h1
           variants={childVariants}
-          className="mb-6 font-display text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl"
+          className="mb-6 font-display text-[clamp(2rem,5vw,3rem)] tracking-tight text-white lg:text-[clamp(3rem,4vw,4rem)]"
         >
           {title}
         </motion.h1>
 
         <motion.p
           variants={childVariants}
-          className="mx-auto mb-10 max-w-2xl text-lg text-[#E6F3FB] sm:text-xl lg:text-2xl"
+          className="mx-auto mb-10 max-w-2xl text-base text-[#E6F3FB] sm:text-lg lg:text-xl"
         >
           {description}
         </motion.p>
