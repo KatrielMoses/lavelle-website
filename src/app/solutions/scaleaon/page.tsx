@@ -54,7 +54,7 @@ export default function ScaleAOnPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#1A1A1A] px-4 py-28 text-white sm:px-6 sm:py-32 xl:min-h-[90svh] xl:px-8 xl:py-16">
+      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#1A1A1A] px-4 py-28 text-white sm:px-6 sm:py-32 xl:min-h-[90svh] xl:px-8">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,#003F72_0%,transparent_80%),linear-gradient(135deg,#1A1A1A_0%,#0f0f0f_100%)]" />
         
         {/* Abstract network mesh effect */}

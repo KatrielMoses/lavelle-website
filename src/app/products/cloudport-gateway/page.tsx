@@ -88,11 +88,11 @@ export default function CloudPortGatewayPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
 
-      <section className="relative isolate overflow-hidden bg-[#003F72] px-4 py-28 text-white sm:px-6 sm:py-32 xl:flex xl:min-h-[100svh] xl:items-center xl:px-8 xl:py-0">
+      <section className="relative isolate overflow-hidden bg-[#003F72] px-4 py-28 text-white sm:px-6 sm:py-32 xl:flex xl:min-h-[100svh] xl:items-center xl:px-8">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,#0078D4_0%,transparent_34%),linear-gradient(135deg,#003F72_0%,#1A1A1A_100%)]" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-[#1A1A1A]/35 to-transparent" />
 
-        <div className="mx-auto grid w-full max-w-7xl items-center gap-8 xl:grid-cols-[minmax(0,0.65fr)_minmax(0,1.35fr)] xl:gap-10">
+        <div className="mx-auto grid w-full max-w-7xl items-start gap-8 xl:grid-cols-[minmax(0,0.65fr)_minmax(0,1.35fr)] xl:gap-10">
           <div className="mx-auto max-w-2xl xl:mx-0 xl:max-w-[560px] xl:-ml-2 2xl:-ml-6">
             <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-[#E6F3FB] xl:mb-6">
               <BadgeCheck className="h-4 w-4 text-[#1A9AE6]" aria-hidden="true" />
@@ -124,7 +124,7 @@ export default function CloudPortGatewayPage() {
             </div>
           </div>
 
-          <div className="hidden rounded-xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-[#1A1A1A]/30 backdrop-blur xl:-mr-8 xl:block xl:origin-center xl:scale-[0.90] 2xl:-mr-0 2xl:scale-100">
+          <div className="hidden max-h-[calc(100svh-16rem)] rounded-xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-[#1A1A1A]/30 backdrop-blur xl:-mr-8 xl:block xl:scale-[0.90] xl:overflow-hidden xl:origin-center 2xl:-mr-0 2xl:scale-100">
             <div className="rounded-lg bg-[#F7FAFD] p-4 text-[#1A1A1A] sm:p-5">
               <div className="flex flex-col gap-4 rounded-t-lg bg-[#003F72] p-4 sm:p-5 sm:flex-row sm:items-center sm:justify-between -mx-4 -mt-4 mb-4 sm:-mx-5 sm:-mt-5 border-b border-[#1A1A1A]/10">
                 <div className="relative h-10 w-36">
@@ -174,7 +174,7 @@ export default function CloudPortGatewayPage() {
                 </div>
               </div>
 
-              <div className="rounded-lg border border-[#C8D6E5]/60 bg-white p-4">
+              <div className="hidden rounded-lg border border-[#C8D6E5]/60 bg-white p-4 2xl:block">
                 <p className="text-sm leading-6 text-[#4A4A4A]">{content.overviewKicker}</p>
               </div>
             </div>

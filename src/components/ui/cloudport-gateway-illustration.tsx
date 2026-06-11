@@ -32,7 +32,7 @@ export function CloudPortGatewayIllustration() {
   const destYs = [100, 250, 400];
 
   return (
-    <div className="w-full bg-[#0a0c10] rounded-xl border border-white/10 shadow-inner overflow-hidden h-[120px] sm:h-[140px]">
+    <div className="w-full bg-[#0a0c10] rounded-xl border border-white/10 shadow-inner overflow-hidden h-[120px] sm:h-[140px] lg:h-[160px] xl:h-[180px]">
       <svg 
         viewBox="0 0 800 500" 
         className="w-full h-full"

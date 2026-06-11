@@ -197,7 +197,7 @@ export function CloudStationInsightsAnalyticsMock({
             </div>
           </div>
 
-          <div className="mt-4 rounded-lg border border-[#C8D6E5]/15 bg-[#151A23] p-4">
+          <div className="mt-4 hidden rounded-lg border border-[#C8D6E5]/15 bg-[#151A23] p-4 2xl:block">
             <div className="mb-4 flex items-center justify-between gap-4">
               <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#E6F3FB]">
                 {preview.pathTitle}

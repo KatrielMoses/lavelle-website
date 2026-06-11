@@ -103,7 +103,7 @@ export function Testimonials() {
             { v: "99.99%", l: "Network uptime SLA" },
             { v: "< 2 wks", l: "Avg. deployment time" },
           ].map(({ v, l }) => (
-            <div key={l} className="bg-[#002D5A] px-8 py-7 text-center lg:text-left">
+            <div key={l} className="bg-[#002D5A] px-4 py-5 text-center sm:px-8 sm:py-7 lg:text-left">
               <p className="font-display text-3xl text-white mb-1">{v}</p>
               <p className="text-white/45 font-sans text-xs">{l}</p>
             </div>

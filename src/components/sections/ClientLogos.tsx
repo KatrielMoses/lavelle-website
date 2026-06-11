@@ -44,14 +44,14 @@ export function ClientLogos() {
           {STRIP.map((logo, i) => (
             <div
               key={`${logo.src}-${i}`}
-              className="flex-shrink-0 mx-10 flex items-center justify-center h-10 opacity-40 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300 cursor-default"
+              className="flex-shrink-0 mx-6 sm:mx-8 lg:mx-10 flex items-center justify-center h-10 opacity-40 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300 cursor-default"
             >
               <Image
                 src={logo.src}
                 alt={logo.name}
                 width={120}
                 height={40}
-                className="h-8 w-auto object-contain max-w-[110px]"
+                className="h-7 sm:h-8 w-auto object-contain max-w-[110px]"
                 unoptimized
               />
             </div>

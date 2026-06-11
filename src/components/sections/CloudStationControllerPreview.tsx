@@ -17,7 +17,7 @@ const navIcons: LucideIcon[] = [Layers3, Activity, SlidersHorizontal, Settings];
 
 export function CloudStationControllerPreview({ preview }: CloudStationControllerPreviewProps) {
   return (
-    <div className="hidden rounded-xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-[#1A1A1A]/30 backdrop-blur lg:-mr-4 lg:block lg:origin-center lg:scale-[0.80] xl:-mr-8 xl:scale-[0.90] 2xl:-mr-0 2xl:scale-100">
+    <div className="hidden rounded-xl border border-white/15 bg-white/10 p-3 shadow-2xl shadow-[#1A1A1A]/30 backdrop-blur xl:-mr-8 xl:block xl:origin-center xl:scale-[0.90] 2xl:-mr-0 2xl:scale-100">
       <div className="overflow-hidden rounded-lg border border-[#C8D6E5]/20 bg-[#0f1117] text-white shadow-2xl shadow-[#1A1A1A]/40">
         <div className="flex h-14 items-center justify-between border-b border-white/10 bg-[#111827] px-4">
           <div className="flex items-center gap-3">

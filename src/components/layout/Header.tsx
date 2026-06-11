@@ -34,7 +34,7 @@ export function Header() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-0.5">
+            <nav className="hidden xl:flex items-center gap-0.5">
             {NAV_ITEMS.map((item) => (
               <div
                 key={item.href}
@@ -100,7 +100,7 @@ export function Header() {
           </div>{/* end left group */}
 
           {/* Right: CTA */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden xl:flex items-center">
             <Link href="/contact">
               <Button variant="primary" size="sm" className="tracking-widest uppercase whitespace-nowrap xl:px-6 xl:py-3 xl:text-base">
                 Know More!
@@ -110,7 +110,7 @@ export function Header() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden p-2 text-white rounded-lg hover:bg-white/10 transition-colors"
+            className="xl:hidden p-2 text-white rounded-lg hover:bg-white/10 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle navigation"
           >
@@ -127,7 +127,7 @@ export function Header() {
             animate={shouldReduce ? {} : { height: "auto", opacity: 1 }}
             exit={shouldReduce ? {} : { height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden overflow-hidden bg-[#003F72] border-t border-white/10"
+            className="xl:hidden overflow-hidden bg-[#003F72] border-t border-white/10"
           >
             <nav className="px-6 py-6 space-y-1 max-h-[calc(100svh-4rem)] overflow-y-auto">
               {NAV_ITEMS.map((item) => (

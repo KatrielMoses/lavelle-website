@@ -90,7 +90,7 @@ export default function CloudStationControllerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
 
-      <section className="relative isolate overflow-hidden bg-[#003F72] px-4 py-28 text-white sm:px-6 sm:py-32 xl:flex xl:min-h-[100svh] xl:items-center xl:px-8 xl:py-0">
+      <section className="relative isolate overflow-hidden bg-[#003F72] px-4 py-28 text-white sm:px-6 sm:py-32 xl:flex xl:min-h-[100svh] xl:items-center xl:px-8">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,#0078D4_0%,transparent_34%),linear-gradient(135deg,#003F72_0%,#1A1A1A_100%)]" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-[#1A1A1A]/35 to-transparent" />
 

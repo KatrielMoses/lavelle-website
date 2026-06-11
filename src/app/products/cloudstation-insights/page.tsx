@@ -83,11 +83,11 @@ export default function CloudStationInsightsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
 
-      <section className="relative isolate overflow-hidden bg-[#003F72] px-4 py-28 text-white sm:px-6 sm:py-32 xl:flex xl:min-h-[100svh] xl:items-center xl:px-8 xl:py-0">
+      <section className="relative isolate overflow-hidden bg-[#003F72] px-4 py-28 text-white sm:px-6 sm:py-32 xl:flex xl:min-h-[100svh] xl:items-center xl:px-8">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_12%,#0078D4_0%,transparent_34%),linear-gradient(135deg,#003F72_0%,#1A1A1A_100%)]" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-[#1A1A1A]/35 to-transparent" />
 
-        <div className="mx-auto grid w-full max-w-7xl items-center gap-8 xl:grid-cols-[minmax(0,0.65fr)_minmax(0,1.35fr)] xl:gap-10">
+        <div className="mx-auto grid w-full max-w-7xl items-start gap-8 xl:grid-cols-[minmax(0,0.65fr)_minmax(0,1.35fr)] xl:gap-10">
           <div className="mx-auto max-w-2xl xl:mx-0 xl:max-w-[560px] xl:-ml-2 2xl:-ml-6">
             <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-[#E6F3FB] xl:mb-6">
               <BadgeCheck className="h-4 w-4 text-[#1A9AE6]" aria-hidden="true" />
@@ -119,7 +119,7 @@ export default function CloudStationInsightsPage() {
             </div>
           </div>
 
-          <div className="hidden xl:-mr-8 xl:mt-20 xl:block xl:origin-center xl:scale-[0.86] 2xl:-mr-0 2xl:scale-[0.94]">
+          <div className="hidden xl:-mr-8 xl:block xl:origin-center xl:scale-[0.86] 2xl:-mr-0 2xl:scale-[0.94]">
             <CloudStationInsightsAnalyticsMock
               fabricLabel={content.dashboardLabel}
               preview={content.preview}

@@ -55,7 +55,7 @@ export default function SDWANPlatformPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#003F72] px-4 py-28 text-white sm:px-6 sm:py-32 xl:min-h-[90svh] xl:px-8 xl:py-16">
+      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#003F72] px-4 py-28 text-white sm:px-6 sm:py-32 xl:min-h-[90svh] xl:px-8">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_30%,#0078D4_0%,transparent_50%),linear-gradient(135deg,#003F72_0%,#1A1A1A_100%)]" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-[#1A1A1A]/35 to-transparent" />
 
