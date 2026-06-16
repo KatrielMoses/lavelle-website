@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/Button";
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeSubDropdown, setActiveSubDropdown] = useState<string | null>(null);
   const shouldReduce = useReducedMotion();
 
   return (
@@ -40,7 +41,10 @@ export function Header() {
                 key={item.href}
                 className="relative"
                 onMouseEnter={() => item.children && setActiveDropdown(item.label)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseLeave={() => {
+                  setActiveDropdown(null);
+                  setActiveSubDropdown(null);
+                }}
               >
                 <Link
                   href={item.href}
@@ -64,30 +68,50 @@ export function Header() {
                       animate={shouldReduce ? {} : { opacity: 1, y: 0 }}
                       exit={shouldReduce ? {} : { opacity: 0, y: -8 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-1 min-w-52 rounded-xl bg-[#003F72] border border-white/10 shadow-2xl overflow-hidden"
+                      className="absolute top-full left-0 mt-1 min-w-52 rounded-xl bg-[#003F72] border border-white/10 shadow-2xl"
                     >
-                      {item.children.map((child) => (
-                        <div key={child.href} className="relative group/sub">
+                      {item.children.map((child, index) => (
+                        <div 
+                          key={child.href} 
+                          className="relative"
+                          onMouseEnter={() => child.children && setActiveSubDropdown(child.label)}
+                          onMouseLeave={() => setActiveSubDropdown(null)}
+                        >
                           <Link
                             href={child.href}
-                            className="flex items-center justify-between px-4 py-3 text-xs text-white/75 hover:text-white hover:bg-white/8 transition-colors duration-150 font-sans font-medium tracking-wider uppercase"
+                            className={`flex items-center justify-between px-4 py-3 text-xs text-white/75 hover:text-white hover:bg-white/8 transition-colors duration-150 font-sans font-medium tracking-wider uppercase ${index === 0 ? "rounded-t-xl" : ""} ${index === item.children!.length - 1 ? "rounded-b-xl" : ""}`}
                           >
                             {child.label}
                             {child.children && <ChevronDown size={14} className="-rotate-90" />}
                           </Link>
-                          {child.children && (
-                            <div className="absolute top-0 left-full ml-1 hidden group-hover/sub:block min-w-64 rounded-xl bg-[#003F72] border border-white/10 shadow-2xl overflow-hidden">
-                              {child.children.map((subChild) => (
-                                <Link
-                                  key={subChild.href}
-                                  href={subChild.href}
-                                  className="block px-4 py-3 text-xs text-white/75 hover:text-white hover:bg-white/8 transition-colors duration-150 font-sans font-medium tracking-wider uppercase"
-                                >
-                                  {subChild.label}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
+                          
+                          <AnimatePresence>
+                            {child.children && activeSubDropdown === child.label && (
+                              <motion.div
+                                initial={shouldReduce ? {} : { opacity: 0, x: -8 }}
+                                animate={shouldReduce ? {} : { opacity: 1, x: 0 }}
+                                exit={shouldReduce ? {} : { opacity: 0, x: -8 }}
+                                transition={{ duration: 0.15 }}
+                                className="absolute top-0 left-full pl-1 z-[100]"
+                              >
+                                <div className="min-w-64 rounded-xl bg-[#003F72] border border-white/10 shadow-2xl overflow-hidden">
+                                  {child.children.map((subChild) => (
+                                    <Link
+                                      key={subChild.href}
+                                      href={subChild.href}
+                                      className="block px-4 py-3 text-xs text-white/75 hover:text-white hover:bg-white/8 transition-colors duration-150 font-sans font-medium tracking-wider uppercase"
+                                      onClick={() => {
+                                        setActiveDropdown(null);
+                                        setActiveSubDropdown(null);
+                                      }}
+                                    >
+                                      {subChild.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
                         </div>
                       ))}
                     </motion.div>

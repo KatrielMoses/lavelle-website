@@ -119,7 +119,7 @@ export default function CloudStationInsightsPage() {
             </div>
           </div>
 
-          <div className="hidden xl:-mr-8 xl:block xl:origin-center xl:scale-[0.86] 2xl:-mr-0 2xl:scale-[0.94]">
+          <div className="mt-12 sm:mt-16 xl:mt-0 w-full xl:-mr-8 2xl:-mr-0">
             <CloudStationInsightsAnalyticsMock
               fabricLabel={content.dashboardLabel}
               preview={content.preview}
