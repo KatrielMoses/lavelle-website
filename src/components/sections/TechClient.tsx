@@ -21,7 +21,6 @@ import {
   Wifi
 } from "lucide-react";
 import { TECHNOLOGY_CONTENT } from "@/lib/technology-content";
-import { CyberGrid } from "@/components/ui/CyberGrid";
 
 interface TechClientProps {
   techId: string;
@@ -77,12 +76,12 @@ function renderVisual(techId: string, shouldReduceMotion: boolean | null) {
     case "built-to-scale":
       return (
         <div className="relative z-10 flex flex-col items-center justify-center text-center w-full h-full">
-          <div className="relative flex items-end justify-center gap-3 mb-10 h-32">
-             <motion.div className="w-8 bg-[#1A9AE6]/40 rounded-t-lg border-t border-x border-[#1A9AE6]" animate={shouldReduceMotion ? {} : { height: ["40%", "70%", "40%"] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} />
-             <motion.div className="w-8 bg-[#0078D4]/60 rounded-t-lg border-t border-x border-[#0078D4]" animate={shouldReduceMotion ? {} : { height: ["60%", "90%", "60%"] }} transition={{ duration: 3, repeat: Infinity, delay: 0.5, ease: "easeInOut" }} />
-             <motion.div className="w-8 bg-emerald-400/40 rounded-t-lg border-t border-x border-emerald-400" animate={shouldReduceMotion ? {} : { height: ["80%", "100%", "80%"] }} transition={{ duration: 3, repeat: Infinity, delay: 1, ease: "easeInOut" }} />
-             <motion.div className="w-8 bg-[#1A9AE6]/60 rounded-t-lg border-t border-x border-[#1A9AE6]" animate={shouldReduceMotion ? {} : { height: ["50%", "80%", "50%"] }} transition={{ duration: 3, repeat: Infinity, delay: 1.5, ease: "easeInOut" }} />
-             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/20" />
+          <div className="relative flex items-end justify-center gap-3 mb-10 h-40 w-64 bg-[#0A1015]/90 rounded-2xl border border-white/10 shadow-2xl p-6 overflow-hidden">
+             <motion.div className="w-8 bg-[#1A9AE6]/60 rounded-t-lg border-t border-x border-[#1A9AE6]" animate={shouldReduceMotion ? {} : { height: ["40%", "70%", "40%"] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} />
+             <motion.div className="w-8 bg-[#0078D4]/80 rounded-t-lg border-t border-x border-[#0078D4]" animate={shouldReduceMotion ? {} : { height: ["60%", "90%", "60%"] }} transition={{ duration: 3, repeat: Infinity, delay: 0.5, ease: "easeInOut" }} />
+             <motion.div className="w-8 bg-emerald-400/60 rounded-t-lg border-t border-x border-emerald-400" animate={shouldReduceMotion ? {} : { height: ["80%", "100%", "80%"] }} transition={{ duration: 3, repeat: Infinity, delay: 1, ease: "easeInOut" }} />
+             <motion.div className="w-8 bg-[#1A9AE6]/80 rounded-t-lg border-t border-x border-[#1A9AE6]" animate={shouldReduceMotion ? {} : { height: ["50%", "80%", "50%"] }} transition={{ duration: 3, repeat: Infinity, delay: 1.5, ease: "easeInOut" }} />
+             <div className="absolute bottom-6 left-0 right-0 h-[1px] bg-white/20" />
           </div>
         </div>
       );
@@ -90,15 +89,15 @@ function renderVisual(techId: string, shouldReduceMotion: boolean | null) {
     case "built-to-be-simple":
       return (
         <div className="relative z-10 flex flex-col items-center justify-center text-center w-full h-full">
-          <div className="relative mb-10 flex items-center justify-center">
+          <div className="relative mb-10 flex items-center justify-center bg-[#0A1015]/90 rounded-2xl border border-white/10 shadow-2xl p-8 w-72">
             <motion.div className="flex items-center gap-2" animate={shouldReduceMotion ? {} : { scale: [0.95, 1.05, 0.95] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
-              <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center bg-white/5"><Split className="h-4 w-4 text-white/50" /></div>
-              <motion.div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-[#1A9AE6]" />
-              <div className="h-16 w-16 bg-gradient-to-br from-[#0078D4] to-[#005A9E] rounded-full shadow-[0_0_20px_rgba(0,120,212,0.4)] flex items-center justify-center z-10 ring-1 ring-white/20">
+              <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center bg-white/10 shadow-inner"><Split className="h-4 w-4 text-white/70" /></div>
+              <motion.div className="h-[1px] w-6 bg-gradient-to-r from-transparent to-[#1A9AE6]" />
+              <div className="h-16 w-16 bg-[#003F72] rounded-full shadow-[0_0_20px_rgba(26,154,230,0.3)] flex items-center justify-center z-10 ring-1 ring-white/20">
                 <ActivitySquare className="h-6 w-6 text-white" />
               </div>
-              <motion.div className="h-[1px] w-8 bg-gradient-to-r from-[#1A9AE6] to-transparent" />
-              <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center bg-white/5"><Globe2 className="h-4 w-4 text-white/50" /></div>
+              <motion.div className="h-[1px] w-6 bg-gradient-to-r from-[#1A9AE6] to-transparent" />
+              <div className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center bg-white/10 shadow-inner"><Globe2 className="h-4 w-4 text-white/70" /></div>
             </motion.div>
           </div>
         </div>
@@ -107,27 +106,22 @@ function renderVisual(techId: string, shouldReduceMotion: boolean | null) {
     case "built-to-be-programmable":
       return (
         <div className="relative z-10 flex flex-col items-center justify-center text-center w-full h-full">
-          <div className="mb-8 w-64 h-32 bg-[#0A1929] rounded-xl border border-[#1A9AE6]/30 shadow-2xl overflow-hidden flex flex-col">
-             <div className="h-6 w-full bg-black/40 flex items-center px-3 gap-1.5 border-b border-white/5">
+          <div className="mb-8 w-64 h-32 bg-[#0A1015]/90 backdrop-blur-md rounded-xl border border-white/10 shadow-2xl overflow-hidden flex flex-col">
+             <div className="h-6 w-full bg-black/60 flex items-center px-3 gap-1.5 border-b border-white/5">
                <div className="h-2 w-2 rounded-full bg-red-500/80" />
                <div className="h-2 w-2 rounded-full bg-amber-500/80" />
                <div className="h-2 w-2 rounded-full bg-green-500/80" />
-               <span className="text-[9px] font-mono text-white/30 ml-2">api_v2_stream</span>
              </div>
-             <div className="p-3 text-left font-mono text-xs overflow-hidden relative flex-1">
-               <motion.div animate={shouldReduceMotion ? {} : { y: [-20, -60] }} transition={{ duration: 4, repeat: Infinity, ease: "linear" }} className="text-emerald-400/80 leading-relaxed">
-                 {"{"}<br/>
-                 &nbsp;&nbsp;"intent": "deploy",<br/>
-                 &nbsp;&nbsp;"policy": "QoS_HIGH",<br/>
-                 &nbsp;&nbsp;"target": "edge_nodes",<br/>
-                 &nbsp;&nbsp;"status": 200<br/>
-                 {"}"}<br/>
-                 {"{"}<br/>
-                 &nbsp;&nbsp;"tunnel": "ipsec",<br/>
-                 &nbsp;&nbsp;"encryption": "aes256"<br/>
-                 {"}"}
+             <div className="p-4 flex-1 flex flex-col gap-2 overflow-hidden justify-center">
+               <motion.div className="h-2 w-3/4 bg-emerald-400/20 rounded-full overflow-hidden relative">
+                 <motion.div className="absolute top-0 bottom-0 left-0 bg-emerald-400" animate={shouldReduceMotion ? {} : { width: ["0%", "100%", "0%"] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
                </motion.div>
-               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0A1929] pointer-events-none" />
+               <motion.div className="h-2 w-1/2 bg-[#1A9AE6]/20 rounded-full overflow-hidden relative">
+                 <motion.div className="absolute top-0 bottom-0 left-0 bg-[#1A9AE6]" animate={shouldReduceMotion ? {} : { width: ["0%", "100%", "0%"] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }} />
+               </motion.div>
+               <motion.div className="h-2 w-5/6 bg-purple-400/20 rounded-full overflow-hidden relative">
+                 <motion.div className="absolute top-0 bottom-0 left-0 bg-purple-400" animate={shouldReduceMotion ? {} : { width: ["0%", "100%", "0%"] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.4 }} />
+               </motion.div>
              </div>
           </div>
         </div>
@@ -137,21 +131,21 @@ function renderVisual(techId: string, shouldReduceMotion: boolean | null) {
       return (
         <div className="relative z-10 flex flex-col items-center justify-center text-center w-full h-full">
           <div className="flex items-center justify-center gap-4 w-full mb-8">
-             <div className="h-12 w-12 bg-white/10 rounded-xl border border-white/20 flex flex-col items-center justify-center flex-none">
-               <span className="text-[10px] uppercase text-white/50 tracking-widest mb-1">HQ</span>
-               <Server className="h-4 w-4 text-[#1A9AE6]" />
+             <div className="h-16 w-16 bg-[#0A1015]/80 backdrop-blur-md rounded-xl border border-white/10 shadow-lg flex flex-col items-center justify-center flex-none">
+               <span className="text-xs font-bold text-white mb-1">HQ</span>
+               <Server className="h-5 w-5 text-[#1A9AE6]" />
              </div>
-             <div className="flex flex-col gap-3 flex-1 h-20 justify-center">
-                <div className="w-full h-2 rounded-full bg-white/5 overflow-hidden border border-white/10 relative">
+             <div className="flex flex-col gap-4 flex-1 h-20 justify-center">
+                <div className="w-full h-2 rounded-full bg-[#0A1015]/60 overflow-hidden border border-white/5 relative shadow-inner">
                    <motion.div className="absolute top-0 bottom-0 bg-[#0078D4]" animate={shouldReduceMotion ? {} : { left: ["-20%", "120%"] }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} style={{ width: "30%" }} />
                 </div>
-                <div className="w-full h-2 rounded-full bg-white/5 overflow-hidden border border-white/10 relative">
+                <div className="w-full h-2 rounded-full bg-[#0A1015]/60 overflow-hidden border border-white/5 relative shadow-inner">
                    <motion.div className="absolute top-0 bottom-0 bg-emerald-400" animate={shouldReduceMotion ? {} : { left: ["-20%", "120%"] }} transition={{ duration: 1.2, repeat: Infinity, ease: "linear", delay: 0.5 }} style={{ width: "40%" }} />
                 </div>
              </div>
-             <div className="h-12 w-12 bg-white/10 rounded-xl border border-white/20 flex flex-col items-center justify-center flex-none">
-               <span className="text-[10px] uppercase text-white/50 tracking-widest mb-1">Branch</span>
-               <Network className="h-4 w-4 text-[#1A9AE6]" />
+             <div className="h-16 w-16 bg-[#0A1015]/80 backdrop-blur-md rounded-xl border border-white/10 shadow-lg flex flex-col items-center justify-center flex-none">
+               <span className="text-xs font-bold text-white mb-1">Branch</span>
+               <Network className="h-5 w-5 text-[#1A9AE6]" />
              </div>
           </div>
         </div>
@@ -160,7 +154,7 @@ function renderVisual(techId: string, shouldReduceMotion: boolean | null) {
     case "quality-of-experience":
       return (
         <div className="relative z-10 flex flex-col items-center justify-center text-center w-full h-full">
-          <div className="relative mb-10 w-48 h-24 flex items-center justify-center">
+          <div className="relative mb-10 w-64 h-32 flex items-center justify-center bg-[#0A1015]/90 rounded-2xl border border-white/10 shadow-2xl p-6">
              <svg viewBox="0 0 200 100" className="w-full h-full overflow-visible">
                <motion.path 
                  d="M 0,50 L 20,40 L 40,60 L 60,30 L 80,70 L 100,20 L 120,50 L 140,40 L 160,50 L 180,45 L 200,50" 
@@ -278,14 +272,14 @@ function renderVisual(techId: string, shouldReduceMotion: boolean | null) {
             </motion.div>
 
             {/* Layer Labels */}
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 flex flex-col items-center">
-              <span className="text-[9px] uppercase tracking-widest text-[#E6F3FB] font-semibold bg-white/5 px-2 py-0.5 rounded border border-white/10 backdrop-blur-md">Perimeter</span>
+            <div className="absolute -top-8 left-1/2 -translate-x-1/2 flex flex-col items-center">
+              <span className="text-xs uppercase tracking-widest text-white font-semibold bg-[#0A1015]/90 px-3 py-1 rounded-md border border-white/10 backdrop-blur-md shadow-lg">Perimeter</span>
               <div className="h-6 w-[1px] bg-gradient-to-b from-white/20 to-transparent" />
             </div>
             
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center">
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center">
               <div className="h-6 w-[1px] bg-gradient-to-t from-emerald-400/30 to-transparent" />
-              <span className="text-[9px] uppercase tracking-widest text-emerald-400 font-semibold bg-emerald-400/10 px-2 py-0.5 rounded border border-emerald-400/20 backdrop-blur-md">Zero Trust Core</span>
+              <span className="text-xs uppercase tracking-widest text-emerald-400 font-semibold bg-[#0A1015]/90 px-3 py-1 rounded-md border border-emerald-400/20 backdrop-blur-md shadow-lg">Zero Trust Core</span>
             </div>
           </div>
         </div>
@@ -296,18 +290,18 @@ function renderVisual(techId: string, shouldReduceMotion: boolean | null) {
         <div className="relative z-10 flex flex-col items-center justify-center text-center w-full h-full max-w-sm mx-auto">
           {/* Control Plane */}
           <motion.div 
-            className="relative z-20 flex flex-col items-center justify-center w-48 rounded-2xl border border-[#1A9AE6]/40 bg-gradient-to-b from-[#1A9AE6]/10 to-[#0A1015]/80 backdrop-blur-md shadow-[0_0_30px_rgba(26,154,230,0.15)] p-6"
+            className="relative z-20 flex flex-col items-center justify-center w-48 rounded-2xl border border-white/10 bg-[#0A1015]/90 backdrop-blur-md shadow-2xl p-4 gap-3"
             animate={shouldReduceMotion ? {} : { y: [-5, 5, -5] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span className="absolute -top-3 text-[10px] uppercase tracking-widest text-[#E6F3FB] font-bold whitespace-nowrap bg-[#1A9AE6]/20 px-3 py-1 rounded-full border border-[#1A9AE6]/30 shadow-lg">Control Plane</span>
-            <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-[#0078D4] to-[#005A9E] shadow-[0_0_20px_rgba(0,120,212,0.6)] flex items-center justify-center ring-1 ring-white/30">
-              <Cloud className="h-6 w-6 text-white" />
+            <span className="text-xs uppercase tracking-widest text-white font-bold whitespace-nowrap bg-white/5 px-4 py-1.5 rounded-full border border-white/10">Control Plane</span>
+            <div className="h-10 w-10 rounded-xl bg-[#003F72] shadow-[0_0_20px_rgba(26,154,230,0.3)] flex items-center justify-center ring-1 ring-white/30">
+              <Cloud className="h-5 w-5 text-white" />
             </div>
           </motion.div>
 
           {/* Dynamic Data Streams */}
-          <div className="relative flex justify-center w-32 h-16 my-2 z-10">
+          <div className="relative flex justify-center w-32 h-16 my-3 z-10">
             {/* Left Stream */}
             <div className="w-[1px] h-full bg-gradient-to-b from-[#1A9AE6]/60 to-[#0078D4]/60 mx-auto relative overflow-hidden">
               <motion.div className="absolute top-0 left-0 w-full h-1/2 bg-white shadow-[0_0_8px_2px_#1A9AE6]" animate={shouldReduceMotion ? {} : { y: ["-100%", "200%"] }} transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 0 }} />
@@ -326,38 +320,31 @@ function renderVisual(techId: string, shouldReduceMotion: boolean | null) {
           <div className="relative w-full">
             {/* Data Plane */}
             <motion.div 
-              className="relative z-20 flex flex-col items-center justify-center w-full rounded-2xl border border-[#0078D4]/30 bg-gradient-to-t from-[#0F172A]/80 to-[#020617]/80 backdrop-blur-xl shadow-2xl p-6 overflow-hidden"
+              className="relative z-20 flex flex-col items-center justify-center w-full rounded-2xl border border-white/10 bg-[#0A1015]/90 backdrop-blur-xl shadow-2xl p-5 overflow-hidden gap-5"
               animate={shouldReduceMotion ? {} : { y: [5, -5, 5] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(0,120,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,120,212,0.1)_1px,transparent_1px)] bg-[size:16px_16px] opacity-50" />
+              <div className="absolute inset-0 bg-[#0A1015]/40" />
               
-              <div className="relative z-10 w-full flex justify-between px-2">
-                <div className="h-8 w-8 rounded-lg bg-[#0078D4]/20 border border-[#0078D4]/50 flex items-center justify-center backdrop-blur-sm">
+              <div className="relative z-10 w-full flex justify-between px-6 mt-2">
+                <div className="h-8 w-8 rounded-lg bg-[#0078D4]/20 border border-[#0078D4]/50 flex items-center justify-center backdrop-blur-sm z-20">
                   <div className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                 </div>
-                <div className="h-8 w-8 rounded-lg bg-[#0078D4]/20 border border-[#0078D4]/50 flex items-center justify-center backdrop-blur-sm mt-8">
+                <div className="h-8 w-8 rounded-lg bg-[#0078D4]/20 border border-[#0078D4]/50 flex items-center justify-center backdrop-blur-sm mt-5 z-20">
                   <div className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                 </div>
-                <div className="h-8 w-8 rounded-lg bg-[#0078D4]/20 border border-[#0078D4]/50 flex items-center justify-center backdrop-blur-sm">
+                <div className="h-8 w-8 rounded-lg bg-[#0078D4]/20 border border-[#0078D4]/50 flex items-center justify-center backdrop-blur-sm z-20">
                   <div className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                 </div>
               </div>
 
-              <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-40">
-                <path d="M 40,32 L 160,64" fill="none" stroke="#0078D4" strokeWidth="1" strokeDasharray="4 4" />
-                <path d="M 280,32 L 160,64" fill="none" stroke="#0078D4" strokeWidth="1" strokeDasharray="4 4" />
+              <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-40 z-10" viewBox="0 0 320 120">
+                <path d="M 60,40 L 160,60" fill="none" stroke="#0078D4" strokeWidth="1" strokeDasharray="4 4" />
+                <path d="M 260,40 L 160,60" fill="none" stroke="#0078D4" strokeWidth="1" strokeDasharray="4 4" />
               </svg>
+
+              <span className="relative z-30 text-xs uppercase tracking-widest text-white font-bold whitespace-nowrap bg-white/5 px-4 py-1.5 rounded-full border border-white/10 mt-1">Data Plane</span>
             </motion.div>
-            
-            {/* Label placed inside overflow-hidden container */}
-            <motion.span 
-              className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-widest text-[#E6F3FB] font-bold whitespace-nowrap bg-[#0078D4]/30 px-3 py-1 rounded-full border border-[#0078D4]/40 shadow-lg z-30"
-              animate={shouldReduceMotion ? {} : { y: [5, -5, 5] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            >
-              Data Plane
-            </motion.span>
           </div>
         </div>
       );
@@ -403,12 +390,9 @@ export function TechClient({ techId }: TechClientProps) {
   return (
     <div className="bg-white" key={techId}>
       {/* 1. Hero Section */}
-      <section className="relative isolate overflow-hidden bg-[#0A1015] px-4 py-24 text-white sm:px-6 sm:py-32 xl:flex xl:min-h-[85svh] xl:items-center xl:px-8">
+      <section className="relative isolate overflow-hidden bg-[#003F72] px-4 py-24 text-white sm:px-6 sm:py-32 xl:flex xl:min-h-[85svh] xl:items-center xl:px-8">
         {/* Full-width immersive background */}
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_30%_30%,#003F72_0%,#0A1015_70%)] opacity-30" />
-        <div className="absolute inset-0 -z-10">
-          <CyberGrid shouldReduceMotion={shouldReduceMotion} />
-        </div>
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_30%_30%,#005A9E_0%,#003F72_70%)] opacity-80" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-white to-transparent opacity-5" />
 
         <div className="mx-auto grid w-full max-w-7xl items-center gap-12 xl:grid-cols-2 xl:gap-16 z-10 pt-10 xl:pt-0">
