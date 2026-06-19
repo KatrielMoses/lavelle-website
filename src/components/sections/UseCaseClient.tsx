@@ -224,13 +224,13 @@ export function UseCaseClient({ useCaseId }: UseCaseClientProps) {
               <span className="tracking-widest uppercase">ENTERPRISE USE CASE</span>
             </motion.div>
             
-            <motion.h1 variants={shouldReduceMotion ? {} : FADE_UP_VARIANTS} className="font-display text-4xl leading-tight text-white sm:text-5xl xl:text-[clamp(3rem,4vw,4.5rem)]">
+            <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl xl:text-[clamp(3rem,4vw,4.5rem)]">
               {useCase.hero.title}
-            </motion.h1>
+            </h1>
             
-            <motion.p variants={shouldReduceMotion ? {} : FADE_UP_VARIANTS} className="mt-6 max-w-xl text-lg leading-8 text-[#E6F3FB] sm:text-xl">
+            <p className="mt-6 max-w-xl text-lg leading-8 text-[#E6F3FB] sm:text-xl">
               {useCase.hero.description}
-            </motion.p>
+            </p>
             
             <motion.div variants={shouldReduceMotion ? {} : FADE_UP_VARIANTS} className="mt-10 flex flex-wrap gap-4">
               <Link

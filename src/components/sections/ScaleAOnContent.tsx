@@ -71,9 +71,9 @@ export function ScaleAOnContent() {
               <span className="tracking-widest uppercase">{content.hero.eyebrow}</span>
             </motion.div>
           )}
-          <motion.h1 variants={shouldReduceMotion ? {} : FADE_UP_VARIANTS} className="max-w-5xl font-display text-[clamp(2.5rem,6vw,4rem)] leading-tight text-white lg:text-[clamp(4rem,5vw,5rem)]">
+          <h1 className="max-w-5xl font-display text-[clamp(2.5rem,6vw,4rem)] leading-tight text-white lg:text-[clamp(4rem,5vw,5rem)]">
             {content.hero.title}
-          </motion.h1>
+          </h1>
           {content.hero.command && (
             <motion.p variants={shouldReduceMotion ? {} : FADE_UP_VARIANTS} className="mt-8 font-display text-2xl text-[#E6F3FB] sm:text-3xl font-normal tracking-wide">
               {content.hero.command}

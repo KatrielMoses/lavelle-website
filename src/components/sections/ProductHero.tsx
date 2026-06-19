@@ -40,19 +40,13 @@ export function ProductHero({ title, description }: ProductHeroProps) {
         animate="visible"
         className="relative z-10 mx-auto max-w-4xl text-center"
       >
-        <motion.h1
-          variants={childVariants}
-          className="mb-6 font-display text-[clamp(2rem,5vw,3rem)] tracking-tight text-white lg:text-[clamp(3rem,4vw,4rem)]"
-        >
+        <h1 className="mb-6 font-display text-[clamp(2rem,5vw,3rem)] tracking-tight text-white lg:text-[clamp(3rem,4vw,4rem)]">
           {title}
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          variants={childVariants}
-          className="mx-auto mb-10 max-w-2xl text-base text-[#E6F3FB] sm:text-lg lg:text-xl"
-        >
+        <p className="mx-auto mb-10 max-w-2xl text-base text-[#E6F3FB] sm:text-lg lg:text-xl">
           {description}
-        </motion.p>
+        </p>
 
         <motion.div
           variants={childVariants}

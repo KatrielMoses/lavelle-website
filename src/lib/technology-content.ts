@@ -214,4 +214,31 @@ export const TECHNOLOGY_CONTENT: Record<string, TechPageContent> = {
       },
     ],
   },
+  "sd-wan": {
+    id: "sd-wan",
+    hero: {
+      title: "SD-WAN Deep Dive",
+      description: "Understand the core mechanics, benefits, and architectural shifts of the Software-Defined Wide Area Network.",
+    },
+    overview:
+      "Software-Defined Wide Area Networking (SD-WAN) decouples the networking hardware from its control mechanism. By utilizing an SDN-centric approach, enterprises can securely connect users to applications across any combination of transport services, including MPLS, LTE, and broadband internet.",
+    features: [
+      {
+        name: "Transport Independence",
+        description: "Abstracts the underlying transport networks, allowing seamless routing of traffic over any combination of internet and private lines without manual intervention.",
+      },
+      {
+        name: "Dynamic Path Control",
+        description: "Continuously monitors performance metrics like latency, jitter, and packet loss, automatically steering critical application traffic to the healthiest links in real-time.",
+      },
+      {
+        name: "Zero-Touch Provisioning",
+        description: "Edge appliances automatically authenticate, download their configuration policies, and establish encrypted tunnels without requiring on-site IT personnel.",
+      },
+      {
+        name: "Application Visibility",
+        description: "Deep packet inspection and behavioral analysis provide granular visibility into application performance, enabling precise QoS and security policies.",
+      },
+    ],
+  },
 };

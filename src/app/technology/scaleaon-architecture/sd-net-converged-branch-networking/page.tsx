@@ -1,31 +1,15 @@
 import type { Metadata } from "next";
-import { TECHNOLOGY_CONTENT } from "@/lib/technology-content";
-import { ProductHero } from "@/components/sections/ProductHero";
-import { ProductFeatures } from "@/components/sections/ProductFeatures";
+import { TechClient } from "@/components/sections/TechClient";
 
 export const metadata: Metadata = {
   title: "SD-NET Converged Branch Networking | Lavelle Networks",
-  description: "Zero touch and zero trust based distributed deployment for maximum availability.",
+  description: "Zero touch and zero trust based distributed deployment.",
 };
 
-export default function SDNETBranchNetworkingPage() {
-  const tech = TECHNOLOGY_CONTENT["sd-net-converged-branch-networking"];
-
+export default function SDNETBranchPage() {
   return (
     <main>
-      <ProductHero title={tech.hero.title} description={tech.hero.description} />
-      
-      {tech.overview && (
-        <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="text-lg leading-8 text-[#4A4A4A] sm:text-xl sm:leading-9">
-              {tech.overview}
-            </p>
-          </div>
-        </section>
-      )}
-
-      <ProductFeatures features={tech.features} />
+      <TechClient techId="sd-net-converged-branch-networking" />
     </main>
   );
 }

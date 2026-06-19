@@ -1,31 +1,15 @@
 import type { Metadata } from "next";
-import { TECHNOLOGY_CONTENT } from "@/lib/technology-content";
-import { ProductHero } from "@/components/sections/ProductHero";
-import { ProductFeatures } from "@/components/sections/ProductFeatures";
+import { TechClient } from "@/components/sections/TechClient";
 
 export const metadata: Metadata = {
   title: "Our Approach to Hybrid WAN | Lavelle Networks",
   description: "Dynamic Path Selection and intelligent path control.",
 };
 
-export default function HybridWANApproachPage() {
-  const tech = TECHNOLOGY_CONTENT["our-approach-to-hybrid-wan"];
-
+export default function HybridWANPage() {
   return (
     <main>
-      <ProductHero title={tech.hero.title} description={tech.hero.description} />
-      
-      {tech.overview && (
-        <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="text-lg leading-8 text-[#4A4A4A] sm:text-xl sm:leading-9">
-              {tech.overview}
-            </p>
-          </div>
-        </section>
-      )}
-
-      <ProductFeatures features={tech.features} />
+      <TechClient techId="our-approach-to-hybrid-wan" />
     </main>
   );
 }
