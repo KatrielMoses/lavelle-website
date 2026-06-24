@@ -1,31 +1,58 @@
 import type { Metadata } from "next";
 import { ABOUT_CONTENT } from "@/lib/about-content";
-import { ProductHero } from "@/components/sections/ProductHero";
-import { ProductFeatures } from "@/components/sections/ProductFeatures";
+import { AboutHero } from "@/components/sections/AboutHero";
+import { AboutStats } from "@/components/sections/AboutStats";
+import { LeadershipGrid } from "@/components/sections/LeadershipGrid";
+import { AboutCta } from "@/components/sections/AboutCta";
 
 export const metadata: Metadata = {
   title: "Leadership | Lavelle Networks",
-  description: "Meet the visionary leaders driving innovation in enterprise networking.",
+  description:
+    "Meet the leaders behind India's #1 SD-WAN. Engineers, operators, and operators-turned-leaders driving growth, product, and customer success at Lavelle Networks.",
+  alternates: { canonical: "/about/leadership" },
+  openGraph: {
+    title: "Leadership | Lavelle Networks",
+    description:
+      "The people behind India's #1 SD-WAN. Engineering, product, sales, and customer success leadership at Lavelle Networks.",
+    url: "/about/leadership",
+    images: [
+      {
+        url: "/og/default.png",
+        width: 1200,
+        height: 630,
+        alt: "Lavelle Networks Leadership",
+      },
+    ],
+  },
 };
 
-export default function LeadershipPage() {
-  const content = ABOUT_CONTENT["leadership"];
+const leadership = ABOUT_CONTENT["leadership"];
 
+if (!leadership) {
+  throw new Error("About leadership content is missing.");
+}
+
+export default function LeadershipPage() {
   return (
-    <main>
-      <ProductHero title={content.hero.title} description={content.hero.description} />
-      
-      {content.overview && (
-        <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="text-lg leading-8 text-[#4A4A4A] sm:text-xl sm:leading-9">
-              {content.overview}
-            </p>
-          </div>
-        </section>
+    <div className="bg-white">
+      <AboutHero content={leadership.hero} />
+
+      {leadership.leadershipStats && leadership.leadershipStats.length > 0 && (
+        <AboutStats
+          kicker="The Leadership Team"
+          stats={leadership.leadershipStats}
+          variant="light"
+        />
       )}
 
-      <ProductFeatures features={content.features} />
-    </main>
+      {leadership.leadershipIntro && leadership.leadership && (
+        <LeadershipGrid
+          intro={leadership.leadershipIntro}
+          leaders={leadership.leadership}
+        />
+      )}
+
+      {leadership.closingCta && <AboutCta content={leadership.closingCta} />}
+    </div>
   );
 }

@@ -240,7 +240,6 @@ export const FOOTER_CONTENT = {
         { label: "About Us", href: "/about" },
         { label: "Partner Program", href: "/partners" },
         { label: "Resources", href: "/resources" },
-        { label: "Careers", href: "/careers" },
         { label: "Contact", href: "/contact" },
       ],
     },

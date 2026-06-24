@@ -1,31 +1,46 @@
 import type { Metadata } from "next";
 import { ABOUT_CONTENT } from "@/lib/about-content";
-import { ProductHero } from "@/components/sections/ProductHero";
-import { ProductFeatures } from "@/components/sections/ProductFeatures";
+import { AboutHero } from "@/components/sections/AboutHero";
+import { AdvisorSpotlight } from "@/components/sections/AdvisorSpotlight";
+import { AboutCta } from "@/components/sections/AboutCta";
 
 export const metadata: Metadata = {
   title: "Executive Advisors | Lavelle Networks",
-  description: "Guiding Lavelle Networks with strategic vision and industry mastery.",
+  description:
+    "Strategic counsel from India's tech operators. The board of advisors and executive evangelists shaping Lavelle Networks' future.",
+  alternates: { canonical: "/about/executive-advisor" },
+  openGraph: {
+    title: "Executive Advisors | Lavelle Networks",
+    description:
+      "Strategic counsel from India's tech operators. The board of advisors and executive evangelists shaping Lavelle Networks' future.",
+    url: "/about/executive-advisor",
+    images: [
+      {
+        url: "/og/default.png",
+        width: 1200,
+        height: 630,
+        alt: "Lavelle Networks Executive Advisors",
+      },
+    ],
+  },
 };
 
-export default function ExecutiveAdvisorPage() {
-  const content = ABOUT_CONTENT["executive-advisor"];
+const advisors = ABOUT_CONTENT["executive-advisor"];
 
+if (!advisors) {
+  throw new Error("About executive-advisor content is missing.");
+}
+
+export default function ExecutiveAdvisorPage() {
   return (
-    <main>
-      <ProductHero title={content.hero.title} description={content.hero.description} />
-      
-      {content.overview && (
-        <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="text-lg leading-8 text-[#4A4A4A] sm:text-xl sm:leading-9">
-              {content.overview}
-            </p>
-          </div>
-        </section>
+    <div className="bg-white">
+      <AboutHero content={advisors.hero} />
+
+      {advisors.boardIntro && advisors.advisors && (
+        <AdvisorSpotlight intro={advisors.boardIntro} advisors={advisors.advisors} />
       )}
 
-      <ProductFeatures features={content.features} />
-    </main>
+      {advisors.closingCta && <AboutCta content={advisors.closingCta} />}
+    </div>
   );
 }

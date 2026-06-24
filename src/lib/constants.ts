@@ -70,8 +70,6 @@ export const NAV_ITEMS: NavItem[] = [
       { label: "Company", href: "/about" },
       { label: "Leadership", href: "/about/leadership" },
       { label: "Executive Advisors", href: "/about/executive-advisor" },
-      { label: "News & Media", href: "/about/news" },
-      { label: "Careers", href: "/about/careers" },
     ],
   },
   {
@@ -80,7 +78,6 @@ export const NAV_ITEMS: NavItem[] = [
     children: [
       { label: "Partner Program", href: "/partners" },
       { label: "Partner Locator", href: "/partners/locator" },
-      { label: "Partner Portal", href: "/partners/portal" },
     ],
   },
   { label: "Resources", href: "/resources" },

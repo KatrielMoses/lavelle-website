@@ -34,3 +34,13 @@ Next.js 15 (App Router) · TypeScript strict · Tailwind CSS v4 · Framer Motion
 ## Quality Gate
 
 Before marking any task complete: `tsc --noEmit` passes · zero console errors · Lighthouse ≥ 90 Performance, ≥ 95 SEO, ≥ 90 Accessibility.
+
+## Project Ownership
+
+- **User** owns the redesign end-to-end: visual, structural, and technical implementation.
+- **Marketing / Product team** will restructure the content later. Implication for code:
+  - All copy lives in `src/lib/*-content.ts` files. Never hardcode strings in JSX.
+  - Components are presentational; they receive content via props from page-level files.
+  - Keep page files thin composition layers (import content, pass props, render sections).
+  - If a new section needs data, add it to the appropriate `lib/*-content.ts` file rather than inlining.
+- Do not ask the user to clarify copy — write it like a human expert, in line with `architect.md` tone rules, and they will revise later.

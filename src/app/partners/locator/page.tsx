@@ -1,31 +1,75 @@
 import type { Metadata } from "next";
-import { PARTNERS_CONTENT } from "@/lib/partners-content";
-import { ProductHero } from "@/components/sections/ProductHero";
-import { ProductFeatures } from "@/components/sections/ProductFeatures";
+import {
+  PARTNER_LOCATIONS,
+  LOCATOR_HERO,
+  LOCATOR_STATS,
+} from "@/lib/partners-content";
+import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { PartnerLocatorHero } from "@/components/sections/PartnerLocatorHero";
+import { PartnerMap } from "@/components/sections/PartnerMap";
+import { PartnerLocatorList } from "@/components/sections/PartnerLocatorList";
+import { PartnerStats } from "@/components/sections/PartnerStats";
+import { PartnerLocatorCta } from "@/components/sections/PartnerLocatorCta";
 
 export const metadata: Metadata = {
   title: "Partner Locator | Lavelle Networks",
-  description: "Find authorized Lavelle Networks partners in your area.",
+  description:
+    "Find certified Lavelle Networks partners across India. View the partner map, filter by city or partner type, and get in touch with regional SIs and distributors.",
+  alternates: { canonical: "/partners/locator" },
+  openGraph: {
+    title: "Lavelle Networks Partner Locator",
+    description:
+      "Every pin is a certified Lavelle partner. Find an integrator or distributor near you.",
+    url: "/partners/locator",
+    images: [
+      {
+        url: "/og/default.png",
+        width: 1200,
+        height: 630,
+        alt: "Lavelle Networks Partner Locator",
+      },
+    ],
+  },
+};
+
+const partnerCount = PARTNER_LOCATIONS.length;
+const cityCount = new Set(PARTNER_LOCATIONS.map((p) => p.city)).size;
+
+const locatorJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: `${SITE_NAME} Partner Locator`,
+  url: `${SITE_URL}/partners/locator`,
+  description: LOCATOR_HERO.description,
+  parentOrganization: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+  areaServed: { "@type": "Country", name: "India" },
+  numberOfEmployees: partnerCount,
 };
 
 export default function PartnerLocatorPage() {
-  const content = PARTNERS_CONTENT["locator"];
-
   return (
-    <main>
-      <ProductHero title={content.hero.title} description={content.hero.description} />
-      
-      {content.overview && (
-        <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="text-lg leading-8 text-[#4A4A4A] sm:text-xl sm:leading-9">
-              {content.overview}
-            </p>
-          </div>
-        </section>
-      )}
+    <div className="bg-[#021530]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(locatorJsonLd) }}
+      />
 
-      <ProductFeatures features={content.features} />
-    </main>
+      <PartnerLocatorHero />
+
+      <PartnerMap partners={PARTNER_LOCATIONS} />
+
+      <PartnerStats
+        stats={[
+          { value: String(cityCount), label: "Cities with active partners" },
+          { value: String(partnerCount), label: "Certified partners listed today" },
+          { value: "24×7", label: "Support coverage on Platinum accounts" },
+          { value: "48 hr", label: "Average response time on registered deals" },
+        ]}
+      />
+
+      <PartnerLocatorList partners={PARTNER_LOCATIONS} />
+
+      <PartnerLocatorCta />
+    </div>
   );
 }
